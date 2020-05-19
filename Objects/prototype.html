@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype JS</title>
+  </head>
+  <body>
+    <h1>Prototype</h1>
+
+    <script>
+      function Person(first, last, age, cpf) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.document = cpf;
+      }
+
+      Person.prototype.fullName = function () {
+        return `${this.firstName} ${this.lastName}`;
+      };
+
+      const myself = new Person(
+        "Thomás",
+        "Escolástico Bueno",
+        20,
+        "123456789-22"
+      );
+
+      console.log(myself.fullName());
+    </script>
+  </body>
+</html>

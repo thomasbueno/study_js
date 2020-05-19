@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype JS</title>
+  </head>
+  <body>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+
+    <script>
+      function Person(name, lastName, age) {
+        this.firstName = name;
+        this.lastName = lastName;
+        this.age = age;
+      }
+
+      Person.prototype.fullName = function () {
+        return `Meu nome completo é ${this.firstName} ${this.lastName}`;
+      };
+
+      const myName = new Person("Thomás", "Escolástico Bueno", 20);
+
+      console.log(myName);
+      console.log(myName.fullName());
+
+      // =====================================================================
+
+      // liste os construtores dos dados abaixo
+      const li = document.querySelector("li");
+
+      li; // HTMLLIElement
+      li.click; // Function
+      li.innerText; // String
+      li.value; // Number
+      li.hidden; // Boolean
+      li.offsetLeft; // Number
+      li.click(); // undefined
+
+      // Qual o construtor dado abaixo:
+      li.hidden.constructor.name; // String
+    </script>
+  </body>
+</html>
